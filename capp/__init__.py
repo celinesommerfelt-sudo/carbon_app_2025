@@ -3,7 +3,7 @@ from flask import Flask
 application = Flask(__name__)
 
 
-application.config['SECRET_KEY'] = '3oueqkfdfas8ruewqndr8ewrewrouewrere44554'
+application.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 from capp.home.routes import home
 from capp.methodology.routes import methodology
@@ -14,6 +14,7 @@ application.register_blueprint(home)
 application.register_blueprint(methodology)
 application.register_blueprint(carbon_app)
 application.register_blueprint(users)
+
 
 
 
